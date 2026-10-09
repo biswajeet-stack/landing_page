@@ -34,6 +34,9 @@ input:focus,textarea:focus{outline:3px solid #9DB5FF;outline-offset:1px;border-c
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #9DB5FF;outline-offset:2px}
 summary{cursor:pointer;list-style:none}
 summary::-webkit-details-marker{display:none}
+.lp-pulse{stroke-dasharray:10 110;stroke-dashoffset:120;animation-name:lp-travel;animation-timing-function:linear;animation-iteration-count:infinite}
+@keyframes lp-travel{from{stroke-dashoffset:120}to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion: reduce){.lp-pulse{animation:none;opacity:0}}
 [hidden]{display:none !important}
 button[disabled]{opacity:.7;cursor:progress}
 /* Consulting call popup */
@@ -78,6 +81,16 @@ button[disabled]{opacity:.7;cursor:progress}
 <g stroke="#5B7BE8" stroke-width="1" fill="none">
 <path d="M0 120H1440M0 240H1440M0 360H1440M0 480H1440M0 600H1440M0 720H1440M0 840H1440"></path>
 <path d="M120 0V900M240 0V900M360 0V900M480 0V900M600 0V900M720 0V900M840 0V900M960 0V900M1080 0V900M1200 0V900M1320 0V900"></path>
+</g>
+</svg>
+<svg aria-hidden="true" width="100%" height="100%" style="position: absolute; inset: 0; pointer-events: none; opacity: 0.8" preserveAspectRatio="none" viewBox="0 0 1440 900">
+<g fill="none" stroke="#8FB0FF" stroke-width="2" stroke-linecap="round">
+<path class="lp-pulse" pathLength="100" vector-effect="non-scaling-stroke" d="M0 240H1440" style="animation-duration: 9s; animation-delay: 0s"></path>
+<path class="lp-pulse" pathLength="100" vector-effect="non-scaling-stroke" d="M840 0V900" style="animation-duration: 8s; animation-delay: 1.5s"></path>
+<path class="lp-pulse" pathLength="100" vector-effect="non-scaling-stroke" d="M0 600H1440" style="animation-duration: 12s; animation-delay: 3s; animation-direction: reverse"></path>
+<path class="lp-pulse" pathLength="100" vector-effect="non-scaling-stroke" d="M360 0V900" style="animation-duration: 11s; animation-delay: 4s"></path>
+<path class="lp-pulse" pathLength="100" vector-effect="non-scaling-stroke" d="M1200 0V900" style="animation-duration: 10s; animation-delay: 5s; animation-direction: reverse"></path>
+<path class="lp-pulse" pathLength="100" vector-effect="non-scaling-stroke" d="M0 480H1440" style="animation-duration: 14s; animation-delay: 7s"></path>
 </g>
 </svg>
 <div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 64px 24px 80px; display: flex; flex-wrap: wrap; gap: 56px; align-items: flex-start">
@@ -430,7 +443,7 @@ button[disabled]{opacity:.7;cursor:progress}
 <script>
 /* ===================== CONFIG ===================== */
 // Paste the Web App URL from Apps Script (Deploy > New deployment > Web app).
-var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzCb6ANExU3IZV_W0lbzqYBMDHJ8CLjCSd8PL-eBJ0RGhjajrW769uLNPtzSl0YXD5G/exec';
+var SCRIPT_URL = 'PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
 /* ================================================== */
 
 (function () {
